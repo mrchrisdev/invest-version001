@@ -5,77 +5,468 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invest</title>
     <link rel="icon" type="image/x-icon" href="invest-asset/logo.png">
-   <link rel="stylesheet" href="investment.css">
-
+    <link rel="stylesheet" href="investment.css">
     <!-- iconscout -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+    <!-- Chart.js for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
-   <body>
-        <nav>
-            <div class="container nav__container">
-                <a href="./investment.html" class="nav__logo">
-                    <img src="invest-asset/logo.png" alt="">
-                </a>
-                <div class="nav__search">
-                    <i class="uil uil-search"></i>
-                    <input type="search" placeholder="Search">
+<body>
+    <nav>
+        <div class="container nav__container">
+            <a href="./investment.html" class="nav__logo">
+                <img src="invest-asset/logo.png" alt="">
+            </a>
+            <div class="nav__search">
+                <i class="uil uil-search"></i>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="nav__profile-wrapper">
+                <button class="nav__theme-btn">
+                    <i class="uil uil-moon"></i>
+                </button>
+                <div class="nav__profile">
+                    <div class="nav__profile-photo">
+                        <img src="invest-asset/profile-1.jpg" alt="profile-photo">
+                    </div>
                 </div>
-                <div class="nav__profile-wrapper">
-                    <button class="nav__theme-btn">
-                            <i class="uil uil-moon"></i>
-                    </button>
-                    <div class="nav__profile">
-                        <div class="nav__profile-photo">
-                            <img src="invest-asset/profile-1.jpg" alt="profile-photo">
+                <h5>Mr Chris</h5>   
+                <i class="uil uil-angle-down"></i>
+                <button class="nav__menu-btn">
+                    <i class="uil uil-bars"></i>
+                </button>
+            </div> 
+        </div>
+    </nav> 
+
+    <!--===================Sidebar======================-->
+    <menu class="sidebar">
+        <a href="investment.html">
+            <i class=" uil uil-create-dashboard"></i>
+            <h5>Dashboard</h5>
+        </a>
+        <a href="invest-Exchange.html">
+            <i class=" uil uil-exchange"></i>
+            <h5>Exchange</h5>
+        </a>
+        <a href="invest-wallet.html">
+            <i class=" uil-wallet"></i>
+            <h5>Wallet</h5>
+        </a>
+        <a href="invest-transaction.html">
+            <i class="uil-transaction"></i>
+            <h5>Transaction</h5>
+        </a>
+        <a href="invest-analytics.html" class="active">
+            <i class=" uil uil-chart"></i>
+            <h5>Analysis</h5>
+        </a>
+        <a href="invest-message.html">
+            <i class="uil uil-envelopes"></i>
+            <h5>Message</h5>
+        </a>
+        <a href="invest-helpCenter.html">
+            <i class="uil uil-Question-cicle"></i>
+            <h5>Help Center</h5>
+        </a>
+        <a href="invest-settings.html">
+            <i class="uil uil-setting"></i>
+            <h5>Settings</h5>
+        </a>
+        <button class="sidebar__close-btn">
+            <i class="uil uil-multiply"></i>
+        </button>
+    </menu>
+
+    <!--===================Main Content======================-->
+    <main>
+        <div class="container analytics__container">
+            <!-- Header -->
+            <div class="analytics__header">
+                <h1>Analysis</h1>
+                <p>Track and analyze your investment performance</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <section class="analytics__stats">
+                <div class="stat__card">
+                    <div class="stat__icon">
+                        <i class="uil uil-arrow-up-right"></i>
+                    </div>
+                    <div class="stat__info">
+                        <h5>Total Return</h5>
+                        <p class="stat__value">+$12,450.50</p>
+                        <span class="stat__percentage positive">+18.5%</span>
+                    </div>
+                </div>
+
+                <div class="stat__card">
+                    <div class="stat__icon">
+                        <i class="uil uil-chart-line"></i>
+                    </div>
+                    <div class="stat__info">
+                        <h5>Portfolio Value</h5>
+                        <p class="stat__value">$67,320.00</p>
+                        <span class="stat__percentage positive">+5.2% This Month</span>
+                    </div>
+                </div>
+
+                <div class="stat__card">
+                    <div class="stat__icon">
+                        <i class="uil uil-dollar-sign"></i>
+                    </div>
+                    <div class="stat__info">
+                        <h5>Total Invested</h5>
+                        <p class="stat__value">$54,870.00</p>
+                        <span class="stat__percentage">23% allocation</span>
+                    </div>
+                </div>
+
+                <div class="stat__card">
+                    <div class="stat__icon">
+                        <i class="uil uil-check-circle"></i>
+                    </div>
+                    <div class="stat__info">
+                        <h5>Success Rate</h5>
+                        <p class="stat__value">89%</p>
+                        <span class="stat__percentage positive">+4% this month</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="analytics__charts">
+                <!-- Portfolio Distribution -->
+                <div class="chart__card">
+                    <div class="chart__header">
+                        <h3>Portfolio Distribution</h3>
+                        <div class="chart__options">
+                            <button class="active">1M</button>
+                            <button>3M</button>
+                            <button>6M</button>
+                            <button>1Y</button>
                         </div>
                     </div>
-                    <h5>Mr Chris</h5>   
-                    <i class="uil uil-angle-down"></i>
-                    <button class="nav__menu-btn">
-                        <i class="uil uil-bars"></i>
-                    </button>
-                </div> 
-            </div>
-        </nav> 
-        <!--===================Sidebar======================-->
-        <menu class="sidebar">
-            <a href="investment.html">
-                <i class=" uil uil-create-dashboard"></i>
-                <h5>Dashboard</h5>
-            </a>
-            <a href="invest-Exchange.html">
-                <i class=" uil uil-exchange"></i>
-                <h5>Exchange</h5>
-            </a>
-            <a href="invest-wallet.html">
-                <i class=" uil-wallet"></i>
-                <h5>Wallet</h5>
-            </a>
-            <a href="invest-transaction.html">
-                <i class="uil-transaction"></i>
-                <h5>Transaction</h5>
-            </a>
-            <a href="invest-analytics.html" class="active">
-                <i class=" uil uil-chart"></i>
-                <h5>Analysis</h5>
-            </a>
-            <a href="invest-message.html">
-                <i class="uil uil-envelopes"></i>
-                <h5>Message</h5>
-            </a>
-            <a href="invest-helpCenter.html">
-                <i class="uil uil-Question-cicle"></i>
-                <h5>Help Center</h5>
-            </a>
-            <a href="invest-settings.html">
-                <i class="uil uil-setting"></i>
-                <h5>Settings</h5>
-            </a>
-            <button class="sidebar__close-btn">
-                <i class="uil uil-multiply"></i>
-            </button>
-        </menu>
+                    <div class="chart__body">
+                        <canvas id="portfolioChart"></canvas>
+                    </div>
+                </div>
 
-        <script src="investment.js"></script>
-   </body>
-</html>  
+                <!-- Performance Chart -->
+                <div class="chart__card">
+                    <div class="chart__header">
+                        <h3>Performance Overview</h3>
+                        <div class="chart__options">
+                            <button class="active">1M</button>
+                            <button>3M</button>
+                            <button>6M</button>
+                            <button>1Y</button>
+                        </div>
+                    </div>
+                    <div class="chart__body">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analysis Details -->
+            <section class="analytics__details">
+                <!-- Top Holdings -->
+                <div class="details__card">
+                    <div class="details__header">
+                        <h3>Top Holdings</h3>
+                        <a href="#">View All</a>
+                    </div>
+                    <div class="holdings__table">
+                        <div class="holding__row header">
+                            <div class="holding__symbol">Symbol</div>
+                            <div class="holding__value">Value</div>
+                            <div class="holding__change">Change</div>
+                            <div class="holding__percent">Percent</div>
+                        </div>
+                        <div class="holding__row">
+                            <div class="holding__symbol">
+                                <span class="symbol__icon">A</span>
+                                <span>Apple Inc.</span>
+                            </div>
+                            <div class="holding__value">$15,200</div>
+                            <div class="holding__change positive">+$1,250</div>
+                            <div class="holding__percent">22.6%</div>
+                        </div>
+                        <div class="holding__row">
+                            <div class="holding__symbol">
+                                <span class="symbol__icon">G</span>
+                                <span>Google LLC</span>
+                            </div>
+                            <div class="holding__value">$12,840</div>
+                            <div class="holding__change positive">+$820</div>
+                            <div class="holding__percent">19.1%</div>
+                        </div>
+                        <div class="holding__row">
+                            <div class="holding__symbol">
+                                <span class="symbol__icon">M</span>
+                                <span>Microsoft Corp</span>
+                            </div>
+                            <div class="holding__value">$10,560</div>
+                            <div class="holding__change positive">+$560</div>
+                            <div class="holding__percent">15.7%</div>
+                        </div>
+                        <div class="holding__row">
+                            <div class="holding__symbol">
+                                <span class="symbol__icon">T</span>
+                                <span>Tesla Inc.</span>
+                            </div>
+                            <div class="holding__value">$9,200</div>
+                            <div class="holding__change negative">-$300</div>
+                            <div class="holding__percent">13.7%</div>
+                        </div>
+                        <div class="holding__row">
+                            <div class="holding__symbol">
+                                <span class="symbol__icon">A</span>
+                                <span>Amazon Inc.</span>
+                            </div>
+                            <div class="holding__value">$8,450</div>
+                            <div class="holding__change positive">+$450</div>
+                            <div class="holding__percent">12.6%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Asset Allocation -->
+                <div class="details__card">
+                    <div class="details__header">
+                        <h3>Asset Allocation</h3>
+                        <span class="details__badge">Balanced</span>
+                    </div>
+                    <div class="allocation__list">
+                        <div class="allocation__item">
+                            <div class="allocation__info">
+                                <span class="allocation__name">Stocks</span>
+                                <span class="allocation__value">$45,200</span>
+                            </div>
+                            <div class="allocation__bar">
+                                <div class="allocation__fill" style="width: 65%"></div>
+                            </div>
+                            <span class="allocation__percent">65%</span>
+                        </div>
+                        <div class="allocation__item">
+                            <div class="allocation__info">
+                                <span class="allocation__name">Bonds</span>
+                                <span class="allocation__value">$14,200</span>
+                            </div>
+                            <div class="allocation__bar">
+                                <div class="allocation__fill" style="width: 20%"></div>
+                            </div>
+                            <span class="allocation__percent">20%</span>
+                        </div>
+                        <div class="allocation__item">
+                            <div class="allocation__info">
+                                <span class="allocation__name">Crypto</span>
+                                <span class="allocation__value">$5,020</span>
+                            </div>
+                            <div class="allocation__bar">
+                                <div class="allocation__fill" style="width: 7%"></div>
+                            </div>
+                            <span class="allocation__percent">7%</span>
+                        </div>
+                        <div class="allocation__item">
+                            <div class="allocation__info">
+                                <span class="allocation__name">ETFs</span>
+                                <span class="allocation__value">$2,898</span>
+                            </div>
+                            <div class="allocation__bar">
+                                <div class="allocation__fill" style="width: 8%"></div>
+                            </div>
+                            <span class="allocation__percent">8%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="analytics__activity">
+                <div class="activity__header">
+                    <h3>Recent Activity</h3>
+                    <a href="#">View All</a>
+                </div>
+                <div class="activity__list">
+                    <div class="activity__item">
+                        <div class="activity__icon buy">
+                            <i class="uil uil-arrow-down"></i>
+                        </div>
+                        <div class="activity__info">
+                            <h5>Bought Apple Stock</h5>
+                            <p>10 shares @ $150.25</p>
+                        </div>
+                        <div class="activity__meta">
+                            <span class="activity__price">+$1,502.50</span>
+                            <span class="activity__time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="activity__item">
+                        <div class="activity__icon sell">
+                            <i class="uil uil-arrow-up"></i>
+                        </div>
+                        <div class="activity__info">
+                            <h5>Sold Google Stock</h5>
+                            <p>5 shares @ $138.50</p>
+                        </div>
+                        <div class="activity__meta">
+                            <span class="activity__price">-$692.50</span>
+                            <span class="activity__time">1 day ago</span>
+                        </div>
+                    </div>
+                    <div class="activity__item">
+                        <div class="activity__icon buy">
+                            <i class="uil uil-arrow-down"></i>
+                        </div>
+                        <div class="activity__info">
+                            <h5>Bought Bitcoin</h5>
+                            <p>0.05 BTC</p>
+                        </div>
+                        <div class="activity__meta">
+                            <span class="activity__price">+$2,100.00</span>
+                            <span class="activity__time">2 days ago</span>
+                        </div>
+                    </div>
+                    <div class="activity__item">
+                        <div class="activity__icon dividend">
+                            <i class="uil uil-gift"></i>
+                        </div>
+                        <div class="activity__info">
+                            <h5>Dividend Received</h5>
+                            <p>From Microsoft Corporation</p>
+                        </div>
+                        <div class="activity__meta">
+                            <span class="activity__price">+$125.00</span>
+                            <span class="activity__time">5 days ago</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Risk Analysis -->
+            <section class="analytics__risk">
+                <div class="risk__card">
+                    <div class="risk__header">
+                        <h3>Risk Assessment</h3>
+                        <span class="risk__level moderate">Moderate</span>
+                    </div>
+                    <div class="risk__metrics">
+                        <div class="risk__metric">
+                            <div class="metric__label">
+                                <span>Volatility</span>
+                                <i class="uil uil-info-circle"></i>
+                            </div>
+                            <div class="metric__value">18.4%</div>
+                            <div class="metric__indicator">
+                                <div class="indicator__bar">
+                                    <div class="indicator__fill" style="width: 45%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="risk__metric">
+                            <div class="metric__label">
+                                <span>Sharpe Ratio</span>
+                                <i class="uil uil-info-circle"></i>
+                            </div>
+                            <div class="metric__value">1.85</div>
+                            <div class="metric__indicator">
+                                <div class="indicator__bar">
+                                    <div class="indicator__fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="risk__metric">
+                            <div class="metric__label">
+                                <span>Max Drawdown</span>
+                                <i class="uil uil-info-circle"></i>
+                            </div>
+                            <div class="metric__value">-12.5%</div>
+                            <div class="metric__indicator">
+                                <div class="indicator__bar">
+                                    <div class="indicator__fill negative" style="width: 35%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="investment.js"></script>
+    <script>
+        // Portfolio Distribution Chart
+        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
+        new Chart(portfolioCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Stocks', 'Bonds', 'Crypto', 'ETFs'],
+                datasets: [{
+                    data: [65, 20, 7, 8],
+                    backgroundColor: [
+                        '#7c3aed',
+                        '#3b82f6',
+                        '#10b981',
+                        '#f59e0b'
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Performance Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                datasets: [{
+                    label: 'Portfolio Value',
+                    data: [54000, 55200, 54800, 58300, 63200, 67320],
+                    borderColor: '#7c3aed',
+                    backgroundColor: 'rgba(124, 58, 237, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 5,
+                    pointBackgroundColor: '#7c3aed',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
