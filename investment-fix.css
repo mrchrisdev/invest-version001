@@ -1,0 +1,42 @@
+/* Overflow fix overrides added to prevent site-wide horizontal scrolling */
+/* File: investment-fix.css */
+
+/* ===== Fix horizontal overflow ===== */
+html, body {
+  max-width: 100%;
+  /* Prevent any visible horizontal scroll while other fixes allow proper shrinking */
+  overflow-x: hidden;
+}
+
+/* Avoid 100vw which includes scrollbar width; prefer 100% so it doesn't force overflow */
+nav {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+/* Allow grid/flex children to shrink instead of forcing their column width */
+body,
+body * {
+  /* Ensure children can shrink inside grid/flex containers */
+  min-width: 0;
+}
+
+/* Make container responsive instead of fixed vw which can overflow on some screens */
+.container {
+  width: 96%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+/* Avoid fixed large widths on small screens */
+.fastPayment {
+  width: 100%;
+  max-width: 690px;
+}
+
+/* Ensure canvases / charts don't overflow */
+canvas, svg {
+  max-width: 100%;
+  height: auto !important;
+}
