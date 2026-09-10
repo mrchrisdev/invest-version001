@@ -50,11 +50,11 @@
             <h5>Exchange</h5>
         </a>
         <a href="invest-wallet.html">
-            <i class=" uil-wallet"></i>
+            <i class="uil uil-wallet"></i>
             <h5>Wallet</h5>
         </a>
         <a href="invest-transaction.html">
-            <i class="uil-transaction"></i>
+            <i class="uil uil-transaction"></i>
             <h5>Transaction</h5>
         </a>
         <a href="invest-analytics.html" class="active">
@@ -66,7 +66,7 @@
             <h5>Message</h5>
         </a>
         <a href="invest-helpCenter.html">
-            <i class="uil uil-Question-cicle"></i>
+            <i class="uil uil-question-circle"></i>
             <h5>Help Center</h5>
         </a>
         <a href="invest-settings.html">
@@ -397,74 +397,80 @@
 
     <script src="investment.js"></script>
     <script>
-        // Portfolio Distribution Chart
-        const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
-        new Chart(portfolioCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Stocks', 'Bonds', 'Crypto', 'ETFs'],
-                datasets: [{
-                    data: [65, 20, 7, 8],
-                    backgroundColor: [
-                        '#7c3aed',
-                        '#3b82f6',
-                        '#10b981',
-                        '#f59e0b'
-                    ],
-                    borderColor: '#ffffff',
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom'
-                    }
-                }
-            }
-        });
-
-        // Performance Chart
-        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
-        new Chart(performanceCtx, {
-            type: 'line',
-            data: {
-                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
-                datasets: [{
-                    label: 'Portfolio Value',
-                    data: [54000, 55200, 54800, 58300, 63200, 67320],
-                    borderColor: '#7c3aed',
-                    backgroundColor: 'rgba(124, 58, 237, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 5,
-                    pointBackgroundColor: '#7c3aed',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top'
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: false,
-                        ticks: {
-                            callback: function(value) {
-                                return '$' + value.toLocaleString();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Portfolio Distribution Chart
+            const portfolioCtx = document.getElementById('portfolioChart');
+            if (portfolioCtx) {
+                new Chart(portfolioCtx.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Stocks', 'Bonds', 'Crypto', 'ETFs'],
+                        datasets: [{
+                            data: [65, 20, 7, 8],
+                            backgroundColor: [
+                                '#7c3aed',
+                                '#3b82f6',
+                                '#10b981',
+                                '#f59e0b'
+                            ],
+                            borderColor: '#ffffff',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
                             }
                         }
                     }
-                }
+                });
+            }
+
+            // Performance Chart
+            const performanceCtx = document.getElementById('performanceChart');
+            if (performanceCtx) {
+                new Chart(performanceCtx.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
+                        datasets: [{
+                            label: 'Portfolio Value',
+                            data: [54000, 55200, 54800, 58300, 63200, 67320],
+                            borderColor: '#7c3aed',
+                            backgroundColor: 'rgba(124, 58, 237, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointBackgroundColor: '#7c3aed',
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: false,
+                                ticks: {
+                                    callback: function(value) {
+                                        return '$' + value.toLocaleString();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
             }
         });
     </script>
