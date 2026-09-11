@@ -14,12 +14,12 @@ const requestsStorageKey = 'investRequests';
 const languageStorageKey = 'investLanguage';
 
 const translations = {
-    es: { Dashboard: 'Panel', Exchange: 'Intercambio', Wallet: 'Billetera', Transaction: 'Transacción', Analysis: 'Análisis', Message: 'Mensajes', 'Help Center': 'Centro de ayuda', Settings: 'Co[...]
-    fr: { Dashboard: 'Tableau de bord', Exchange: 'Échange', Wallet: 'Portefeuille', Transaction: 'Transaction', Analysis: 'Analyse', Message: 'Messages', 'Help Center': "Centre d'aide", Settings[...]
-    de: { Dashboard: 'Dashboard', Exchange: 'Austausch', Wallet: 'Wallet', Transaction: 'Transaktion', Analysis: 'Analyse', Message: 'Nachrichten', 'Help Center': 'Hilfezentrum', Settings: 'Einste[...]
-    pt: { Dashboard: 'Painel', Exchange: 'Câmbio', Wallet: 'Carteira', Transaction: 'Transação', Analysis: 'Análise', Message: 'Mensagens', 'Help Center': 'Central de ajuda', Settings: 'Config[...]
-    zh: { Dashboard: '仪表板', Exchange: '兑换', Wallet: '钱包', Transaction: '交易', Analysis: '分析', Message: '消息', 'Help Center': '帮助中心', Settings: '设置', Overview: '[...]
-    ar: { Dashboard: 'لوحة التحكم', Exchange: 'تبادل', Wallet: 'المحفظة', Transaction: 'المعاملة', Analysis: 'التحليل', Message: 'الرسائل', 'Help Center[...]
+    es: { Dashboard: 'Panel', Exchange: 'Intercambio', Wallet: 'Billetera', Transaction: 'Transacción', Analysis: 'Análisis', Message: 'Mensajes', 'Help Center': 'Centro de ayuda', Settings: 'Configuración', Overview: 'Resumen', 'Total asset': 'Activos totales', 'Total Balance': 'Saldo total', 'Today\'s P&L: +0.00%': 'P&L de hoy: +0.00%', 'Available balance': 'Saldo disponible', 'Fast Payment': 'Pago rápido', Investments: 'Inversiones', 'Recent Transactions': 'Transacciones recientes', 'Account Settings': 'Configuración de cuenta', Profile: 'Perfil', Security: 'Seguridad', Interface: 'Interfaz', Language: 'Idioma', 'Save Changes': 'Guardar cambios', Cancel: 'Cancelar' },
+    fr: { Dashboard: 'Tableau de bord', Exchange: 'Échange', Wallet: 'Portefeuille', Transaction: 'Transaction', Analysis: 'Analyse', Message: 'Messages', 'Help Center': "Centre d'aide", Settings: 'Paramètres', Overview: 'Vue d’ensemble', 'Total asset': 'Actifs totaux', 'Total Balance': 'Solde total', 'Fast Payment': 'Paiement rapide', Investments: 'Investissements', 'Recent Transactions': 'Transactions récentes', 'Account Settings': 'Paramètres du compte', Profile: 'Profil', Security: 'Sécurité', Interface: 'Interface', Language: 'Langue', 'Save Changes': 'Enregistrer', Cancel: 'Annuler' },
+    de: { Dashboard: 'Dashboard', Exchange: 'Austausch', Wallet: 'Wallet', Transaction: 'Transaktion', Analysis: 'Analyse', Message: 'Nachrichten', 'Help Center': 'Hilfezentrum', Settings: 'Einstellungen', Overview: 'Übersicht', 'Total asset': 'Gesamtvermögen', 'Total Balance': 'Gesamtsaldo', 'Fast Payment': 'Schnellzahlung', Investments: 'Investitionen', 'Recent Transactions': 'Letzte Transaktionen', 'Account Settings': 'Kontoeinstellungen', Profile: 'Profil', Security: 'Sicherheit', Interface: 'Oberfläche', Language: 'Sprache', 'Save Changes': 'Änderungen speichern', Cancel: 'Abbrechen' },
+    pt: { Dashboard: 'Painel', Exchange: 'Câmbio', Wallet: 'Carteira', Transaction: 'Transação', Analysis: 'Análise', Message: 'Mensagens', 'Help Center': 'Central de ajuda', Settings: 'Configurações', Overview: 'Visão geral', 'Total asset': 'Ativos totais', 'Total Balance': 'Saldo total', 'Fast Payment': 'Pagamento rápido', Investments: 'Investimentos', 'Recent Transactions': 'Transações recentes', 'Account Settings': 'Configurações da conta', Profile: 'Perfil', Security: 'Segurança', Interface: 'Interface', Language: 'Idioma', 'Save Changes': 'Salvar alterações', Cancel: 'Cancelar' },
+    zh: { Dashboard: '仪表板', Exchange: '兑换', Wallet: '钱包', Transaction: '交易', Analysis: '分析', Message: '消息', 'Help Center': '帮助中心', Settings: '设置', Overview: '概览', 'Total asset': '总资产', 'Total Balance': '总余额', 'Fast Payment': '快速付款', Investments: '投资', 'Recent Transactions': '最近交易', 'Account Settings': '账户设置', Profile: '个人资料', Security: '安全', Interface: '界面', Language: '语言', 'Save Changes': '保存更改', Cancel: '取消' },
+    ar: { Dashboard: 'لوحة التحكم', Exchange: 'تبادل', Wallet: 'المحفظة', Transaction: 'المعاملة', Analysis: 'التحليل', Message: 'الرسائل', 'Help Center': 'مركز المساعدة', Settings: 'الإعدادات', Overview: 'نظرة عامة', 'Total asset': 'إجمالي الأصول', 'Total Balance': 'الرصيد الإجمالي', 'Fast Payment': 'دفع سريع', Investments: 'الاستثمارات', 'Recent Transactions': 'المعاملات الأخيرة', 'Account Settings': 'إعدادات الحساب', Profile: 'الملف الشخصي', Security: 'الأمان', Interface: 'الواجهة', Language: 'اللغة', 'Save Changes': 'حفظ التغييرات', Cancel: 'إلغاء' }
 };
 
 function applyLanguage(language = localStorage.getItem(languageStorageKey) || 'en') {
@@ -317,7 +317,7 @@ function ensureProfileMenu() {
         menu = document.createElement('div');
         menu.className = 'profile-menu';
         menu.id = 'profileMenu';
-        menu.innerHTML = '<div class="profile-menu__header"><span>Current account</span><strong class="nav__profile-menu-name"></strong></div><button type="button" class="profile-menu__item">Chan[...]
+        menu.innerHTML = '<div class="profile-menu__header"><span>Current account</span><strong class="nav__profile-menu-name"></strong></div><button type="button" class="profile-menu__item">Change profile photo</button><button type="button" class="profile-menu__item">Switch account</button><button type="button" class="profile-menu__item profile-menu__item--danger">Logout</button>';
         profile.appendChild(menu);
     }
 
@@ -456,7 +456,7 @@ function showCardAssetChooser(fundedAssets) {
     const overview = document.getElementById('accountOverview');
     if (!overview) return;
     overview.querySelector('.card-asset-chooser')?.remove();
-    overview.insertAdjacentHTML('beforeend', `<div class="card-asset-chooser" role="dialog" aria-label="Choose card currency"><strong>Choose the currency for your card</strong><div>${fundedAssets[...]
+    overview.insertAdjacentHTML('beforeend', `<div class="card-asset-chooser" role="dialog" aria-label="Choose card currency"><strong>Choose the currency for your card</strong><div>${fundedAssets.map(({ key, label }) => `<button type="button" data-card-choice="${key}">${label} card</button>`).join('')}<button type="button" class="card-asset-chooser__cancel" data-card-choice-cancel>Cancel</button></div></div>`);
     const chooser = overview.querySelector('.card-asset-chooser');
     chooser.addEventListener('click', (event) => {
         if (event.target.closest('[data-card-choice-cancel]')) {
@@ -501,7 +501,7 @@ function showCardDetails(cardIndex) {
         modal = document.createElement('div');
         modal.id = 'cardDetailsModal';
         modal.className = 'card-details-modal';
-        modal.innerHTML = '<div class="card-details-modal__backdrop" data-close-card-details></div><section class="card-details-panel" role="dialog" aria-modal="true" aria-labelledby="cardDetails[...]
+        modal.innerHTML = '<div class="card-details-modal__backdrop" data-close-card-details></div><section class="card-details-panel" role="dialog" aria-modal="true" aria-labelledby="cardDetailsTitle"><button type="button" class="card-details-close" data-close-card-details aria-label="Close card details">&times;</button><p class="card-details-eyebrow">Card details</p><h2 id="cardDetailsTitle"></h2><div class="card-details-grid"><div><small>Serial number</small><strong data-card-detail="serialNumber"></strong></div><div><small>Expiry</small><strong data-card-detail="expiry"></strong></div><div><small>CVV</small><strong data-card-detail="cvv"></strong></div><div><small>Status</small><strong data-card-detail="status"></strong></div></div></section>';
         document.body.appendChild(modal);
         modal.addEventListener('click', (event) => {
             if (event.target.closest('[data-close-card-details]')) modal.hidden = true;
@@ -526,7 +526,7 @@ function renderAccount() {
     const cards = document.getElementById('accountCards');
     const investments = document.getElementById('accountInvestments');
     if (overview) {
-        overview.innerHTML = `<div><h2>Total asset <button type="button" class="dashboard-balance-toggle" id="dashboardBalanceToggle" aria-label="Hide total asset" title="Hide total asset"><i cla[...]
+        overview.innerHTML = `<div><h2>Total asset <button type="button" class="dashboard-balance-toggle" id="dashboardBalanceToggle" aria-label="Hide total asset" title="Hide total asset"><i class="uil uil-eye"></i></button></h2><p>Live value of your crypto holdings.</p></div><div class="dashboard-asset-values"><strong id="dashboardTotalBalance">${formatWalletCurrency(account.balance)}</strong><span id="dashboardPnl">Today's P&amp;L: +0.00%</span></div>`;
         setupDashboardBalanceToggle();
     }
     if (cards) {
@@ -538,12 +538,12 @@ function renderAccount() {
             const amount = asset ? Number(account.cryptoBalances[asset.key]) : Number(card.balance) || 0;
             const label = asset?.label || card.type;
             const isActive = card.active !== false;
-            cards.insertAdjacentHTML('beforeend', `<article class="card${isActive ? '' : ' card--inactive'}" tabindex="0" role="link" aria-label="Open ${label} card management" data-card-index="$[...]
+            cards.insertAdjacentHTML('beforeend', `<article class="card${isActive ? '' : ' card--inactive'}" tabindex="0" role="link" aria-label="Open ${label} card management" data-card-index="${cardIndex}"><div class="card__header"><div class="card__header-left"><img src="invest-asset/${asset?.key?.toUpperCase() || 'BTC'}.png" alt=""><h3>${label}</h3></div><div class="card__header-right"><img src="invest-asset/visa.png" alt="Visa"></div></div><div class="card__body"><h1>${asset ? `${formatCryptoAmount(amount)} ${label}` : formatWalletCurrency(amount)}</h1><div class="card__body-chip"><img src="invest-asset/card chip.png" alt=""></div></div><div class="card__footer"><div class="card__footer-left"><small>Card Holder</small><h5>${account.name}</h5></div><small class="card__open-hint">Manage card</small></div></article>`);
         });
     }
     if (investments) {
         investments.querySelectorAll('.investment').forEach((investment) => investment.remove());
-        account.investments.forEach((investment) => investments.insertAdjacentHTML('beforeend', `<article class="investment"><h4>${investment.name}</h4><div class="date-time"><p>${new Date(invest[...]
+        account.investments.forEach((investment) => investments.insertAdjacentHTML('beforeend', `<article class="investment"><h4>${investment.name}</h4><div class="date-time"><p>${new Date(investment.createdAt).toLocaleDateString()}</p></div><div class="amount"><h5>${formatWalletCurrency(investment.amount)}</h5></div></article>`));
         if (!account.investments.length) investments.insertAdjacentHTML('beforeend', '<p class="account-empty">No investments available yet.</p>');
     }
     const cardRequest = document.getElementById('requestCardBtn');
@@ -573,7 +573,7 @@ function setupDashboardBalanceToggle() {
 }
 
 if (!currentUser) {
-    window.location.href = 'index.html';
+    window.location.href = 'invest-first__page.html';
 } else {
     renderProfile(getAccount() || currentUser);
 }
@@ -582,7 +582,7 @@ const logoutButton = document.querySelector('.profile-menu__item--danger');
 if (logoutButton) {
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('investCurrentUser');
-        window.location.href = 'index.html';
+        window.location.href = 'invest-first__page.html';
     });
 }
 
@@ -617,12 +617,12 @@ function renderTransactionHistory() {
         const isConversion = transaction.type === 'conversion';
         const amount = isConversion
             ? `<span class="danger">-${transaction.fromAmount} ${transaction.fromAsset}</span><br><span class="success">+${transaction.toAmount} ${transaction.toAsset}</span>`
-            : `<span class="${transaction.type === 'deposit' ? 'success' : ''}">${transaction.direction === 'in' ? '+' : '-'}${transaction.amount} ${transaction.asset || transaction.coin || 'USD'[...]
+            : `<span class="${transaction.type === 'deposit' ? 'success' : ''}">${transaction.direction === 'in' ? '+' : '-'}${transaction.amount} ${transaction.asset || transaction.coin || 'USD'}</span>`;
         const from = transaction.direction === 'in' ? 'External wallet' : account.name;
         const to = transaction.direction === 'in' ? account.name : transaction.recipient || (isConversion ? 'Wallet' : 'Card provider');
         const statusClass = transaction.status === 'Pending' ? '' : transaction.direction === 'in' ? 'success' : 'danger';
         const statusCellClass = transaction.status === 'Completed' ? 'status-completed' : statusClass;
-        row.innerHTML = `<td>${transaction.id || '-'}</td><td>${new Date(transaction.createdAt).toLocaleString()}</td><td>${from}</td><td>${to}</td><td>${isConversion ? `${transaction.fromAsset} [...]
+        row.innerHTML = `<td>${transaction.id || '-'}</td><td>${new Date(transaction.createdAt).toLocaleString()}</td><td>${from}</td><td>${to}</td><td>${isConversion ? `${transaction.fromAsset} to ${transaction.toAsset}` : transaction.asset || transaction.coin || 'USD'}</td><td>${amount}</td><td>${transaction.description || transaction.note || '-'}</td><td class="${statusClass}"><span class="${statusCellClass}">${transaction.status || 'Completed'}</span></td>`;
         historyBody.appendChild(row);
     });
 }
@@ -962,6 +962,14 @@ document.addEventListener('click', (event) => {
 
 
 
+
+
+
+
+
+
+
+
 document.addEventListener('click', (event) => {
     const menu = document.getElementById('profileMenu');
     const trigger = document.querySelector('.nav__profile .uil-angle-down');
@@ -973,3 +981,5 @@ document.addEventListener('click', (event) => {
         menu.classList.remove('show');
     }
 });
+
+
